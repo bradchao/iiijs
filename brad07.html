@@ -1,16 +1,29 @@
 <script>
     function doCalc(){
+        let op = document.getElementById("op");
+        
+        console.log(op.selectedIndex);
+        
         let xValue = parseInt(document.getElementById("x").value);
         let yValue = parseInt(document.getElementById("y").value);
-        let r1 = parseInt(xValue / yValue);
-        let r2 = xValue % yValue;
+        let result = '';
 
-        document.getElementById("here").innerHTML= 
-            r1 + " ...... " + r2 ;
+        if (op.selectedIndex == 0){
+            result = xValue + yValue;
+        }else if (op.selectedIndex == 1){
+            result = xValue - yValue;
+        }else if (op.selectedIndex == 2){
+            result = xValue * yValue;
+        }else if (op.selectedIndex == 3){
+            let r1 = parseInt(xValue / yValue);
+            let r2 = xValue % yValue;
+            result = `${r1} ...... ${r2}`;
+        }
+        document.getElementById("here").innerHTML= result;
     }
 </script>
 <input type="text" id="x">
-<select>
+<select id="op">
     <option>+</option>
     <option>-</option>
     <option>x</option>

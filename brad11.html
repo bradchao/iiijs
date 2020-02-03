@@ -2,18 +2,17 @@
     function mytest(){
         let year = document.getElementById("year").value;
         year = Number(year);
-        let isOK;
+        console.log(year + ":" + typeof(year));
+
+        let isOK = true;
         if (year % 4 == 0){
-            if ( year % 100 == 0){
+            if (year % 100 == 0){
                 if (year % 400 == 0){
-                    // 29
                     isOK = true;
                 }else{
-                    // 28
                     isOK = false;
                 }
             }else{
-                // 29
                 isOK = true;
             }
         }else{
@@ -21,20 +20,9 @@
             isOK = false;
         }
 
-        if ( (year % 4 == 0 && year % 100 != 0) || (year % 400) ){
-            // 29
-        }else{
-            // 28
-        }
+        console.log(isOK);
+        document.getElementById('result').innerHTML = isOK?"閏年":"平年"ㄤ
 
-        document.getElementById("result").innerHTML =
-            isOK ? '閏年' : '平年';
-
-        // if (isOK){
-        //     document.write("閏年");
-        // }else{
-        //     document.write("平年");
-        // }
     }
 </script>
 <input type="text" id="year">
