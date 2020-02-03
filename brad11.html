@@ -1,0 +1,42 @@
+<script>
+    function mytest(){
+        let year = document.getElementById("year").value;
+        year = Number(year);
+        let isOK;
+        if (year % 4 == 0){
+            if ( year % 100 == 0){
+                if (year % 400 == 0){
+                    // 29
+                    isOK = true;
+                }else{
+                    // 28
+                    isOK = false;
+                }
+            }else{
+                // 29
+                isOK = true;
+            }
+        }else{
+            // 28
+            isOK = false;
+        }
+
+        if ( (year % 4 == 0 && year % 100 != 0) || (year % 400) ){
+            // 29
+        }else{
+            // 28
+        }
+
+        document.getElementById("result").innerHTML =
+            isOK ? '閏年' : '平年';
+
+        // if (isOK){
+        //     document.write("閏年");
+        // }else{
+        //     document.write("平年");
+        // }
+    }
+</script>
+<input type="text" id="year">
+<input type="button" value="判斷是否為閏年" onclick="mytest()">
+<span id='result'></span>

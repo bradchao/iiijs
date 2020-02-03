@@ -3,10 +3,21 @@ let score = Math.random(); // 0.0 <= random < 1.0
 score = parseInt(score*101);
 document.write(score + "<br>");  // 0 <= score <= 100
 
-if ( score >= 60){
-    document.write("Pass");
+if ( score >= 90){
+    document.write("A");
+}else if (score >= 80){
+    document.write("B");
+    score = 57;
+}else if (score >= 70){
+    document.write("C");
+}else if (score >= 60){
+    document.write("D");
 }else{
-    document.write("Down");
+    document.write("E");
 }
+
+document.write("<hr>");
+document.write(score);
+
 
 </script>
