@@ -1,0 +1,21 @@
+<script>
+    function doCalc(){
+        let xValue = parseInt(document.getElementById("x").value);
+        let yValue = parseInt(document.getElementById("y").value);
+        let r1 = parseInt(xValue / yValue);
+        let r2 = xValue % yValue;
+
+        document.getElementById("here").innerHTML= 
+            r1 + " ...... " + r2 ;
+    }
+</script>
+<input type="text" id="x">
+<select>
+    <option>+</option>
+    <option>-</option>
+    <option>x</option>
+    <option>/</option>
+</select>
+<input type="text" id="y">
+<input type="button" value="=" onclick="doCalc()">
+<span id="here"></span>
