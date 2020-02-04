@@ -1,0 +1,53 @@
+<script>
+    // Array 陣L => no space
+    let ary1 = new Array(); // new => Object
+    let ary2 = [];
+    console.log(typeof ary1);
+    console.log(typeof ary2);
+    let ary3 = [1,2,3,4];
+    console.log(ary3);
+    console.log(ary3.length);   // has-a
+    console.log(ary3[0]);
+    console.log(ary3[1]);
+    console.log(ary3[2]);
+    console.log(ary3[3]);
+    console.log(ary3[7]);
+    console.log("------");
+    for (let i=0; i<ary3.length; i++){
+        console.log(ary3[i]);
+    }
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+    ary3[4] = 101;
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+    ary3.push(102);
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+    ary3.pop();
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+    ary3.shift();
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+    ary3.unshift(99);
+    console.log("------");
+    for (let value of ary3){
+        console.log(value);
+    }
+
+
+
+
+
+</script>

@@ -1,0 +1,13 @@
+<script>
+    // 1 ~ 6 => 100 times
+    let p = [0,0,0,0,0,0];  // p[0] = p[1] = p[2] =... p[5] = 0
+    for (let i=0; i<10000000; i++){
+        let point = parseInt(Math.random()*9);   // 0-8
+        p[point>=6?point-3:point]++;
+    }
+    for (let i = 0; i< p.length; i++){
+        document.write(`${i+1}點出現${p[i]}次<br>`);
+    }
+
+
+</script>
