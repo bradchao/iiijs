@@ -8,48 +8,23 @@
     }
 </style>
 <table>
-    <tr>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-    </tr>
+    <script>
+        const ROW = 1;
+        const START = 1; 
+        const COL = 9;
+
+        for (let k = 0; k<ROW; k++){
+            document.write("<tr>");
+            for (let j=START; j<(START+COL); j++){       
+                let newj = j + k * COL;     
+                document.write("<td>");
+                for (let i=1; i<=9; i++){
+                    let r = newj * i;
+                    document.write(`${newj} x ${i} = ${r}<br>`);
+                }
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+    </script>
 </table>
