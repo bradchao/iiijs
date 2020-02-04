@@ -1,0 +1,24 @@
+<script>
+    let poker = [];
+    for (let i = 0; i<10; i++){
+        let rand = parseInt(Math.random()*10);  // 0 - 51
+        
+        //  檢查機制
+        let isRepeat = false;
+        for (let j=0; j<i; j++){
+            if (rand == poker[j]){
+                // 就重複了
+                isRepeat = true;
+                break;
+            }
+        }
+
+        if (!isRepeat){
+            poker[i] = rand;
+            document.write(poker[i] + "<br>");
+        }else{
+            i--;
+        }
+
+    }
+</script>
