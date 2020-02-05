@@ -1,0 +1,21 @@
+<script>
+let a = [1,2,'III',3,4,'Brad','MFEE'];
+a[10] = 'OK';
+for (let i=0; i<a.length; i++){
+    document.write(a[i] + "<br>");
+}
+document.write("<hr>");
+for (let v of a){
+    document.write(v + "<br>");
+}
+document.write("<hr>");
+for (let index in a){
+    document.write(a[index] + '<br>');
+}
+document.write("<hr>");
+let b = 1;
+while (b<10){
+    document.write(b++ + "<br>");
+}
+
+</script>
