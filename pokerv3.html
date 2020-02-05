@@ -1,4 +1,5 @@
 <script>
+    // 洗牌
     let poker = [];
     for (let i=0; i<52; i++) poker[i] = i;
     for (let j=poker.length-1; j>0; j--){
@@ -10,14 +11,51 @@
     }
     document.write("<hr>");
 
+    // 發牌
     let players = [[],[],[],[],];
     for (let k=0; k<poker.length; k++){
         players[k%4].push(poker[k]);
         //players[k%4][parseInt(k/4)] = poker[k];
     }
 
-    for (let card of players[0]){
-        document.write(card + "<br>");
-    }
+    // 攤牌
 
 </script>
+<table border="1" style="border-collapse: collapse;" width="100%">
+    <tr>
+        <script>
+            for (let card of players[0]){
+                document.write(`<td>${card}</td>`);
+            }
+        </script>
+        
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
