@@ -1,0 +1,20 @@
+<script src='bradutils.js'></script>
+<script>
+    function checkID(){
+        //console.log("onblur");
+        let twid = document.getElementById('twid').value;
+        let result = checkTWId(twid);
+        if (result){
+            document.getElementById('mesg').innerHTML = 'OK';
+        }else{
+            document.getElementById('mesg').innerHTML = 'ERR';
+        }
+    }
+</script>
+<form action="brad31.php">
+    Name: <input type="text" /><br>
+    ID: <input type="text" id='twid' onblur="checkID()"/>
+        <span id='mesg'></span><br>
+    Gender: <input type="radio">Male<input type="radio">Female<br>
+    <input type="submit" value="Register"/>
+</form>
