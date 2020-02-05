@@ -8,5 +8,16 @@
     for (let value of poker){
         document.write(value + "<br>");
     }
+    document.write("<hr>");
+
+    let players = [[],[],[],[],];
+    for (let k=0; k<poker.length; k++){
+        players[k%4].push(poker[k]);
+        //players[k%4][parseInt(k/4)] = poker[k];
+    }
+
+    for (let card of players[0]){
+        document.write(card + "<br>");
+    }
 
 </script>
