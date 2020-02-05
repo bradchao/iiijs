@@ -1,3 +1,12 @@
 <script>
-    
+    let poker = [];
+    for (let i=0; i<52; i++) poker[i] = i;
+    for (let j=poker.length-1; j>0; j--){
+        let rand = parseInt(Math.random()*(j+1));
+        [poker[j], poker[rand]] = [poker[rand], poker[j]];
+    }
+    for (let value of poker){
+        document.write(value + "<br>");
+    }
+
 </script>
