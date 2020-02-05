@@ -22,40 +22,13 @@
 
 </script>
 <table border="1" style="border-collapse: collapse;" width="100%">
-    <tr>
-        <script>
-            for (let card of players[0]){
-                document.write(`<td>${card}</td>`);
-            }
-        </script>
-        
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-
+<script>
+    for (let player of players){
+        document.write("<tr>");
+        for (let card of player){
+            document.write(`<td>${card}</td>`);
+        }
+        document.write("</tr>");
+    }
+</script>
 </table>
