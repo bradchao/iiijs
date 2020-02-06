@@ -1,0 +1,16 @@
+<script>
+    let bike = new Object();
+    document.write(typeof bike + "<br>");
+    bike.speed = 0;
+    document.write(bike.speed + "<br>");
+    bike.upSpeed = function(){
+        this.speed = this.speed<1 ? 1 : this.speed*1.2;
+    };
+
+    bike.upSpeed(); // 1
+    bike.upSpeed(); // 1.2
+    bike.upSpeed(); // 1.44
+    document.write(bike.speed);
+
+
+</script>
