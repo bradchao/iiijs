@@ -1,0 +1,24 @@
+<script>
+    let i = 0;  // second
+    let timerTask = null;
+    function start(){
+        timerTask = setInterval( doCounter, 100);
+    }
+    function doCounter(){
+        document.getElementById('counter').innerHTML = ++i;
+    }
+    function pause(){
+        if (timerTask != null){
+            clearInterval(timerTask);
+        }
+    }
+    function zero(){
+        i = 0;
+        document.getElementById('counter').innerHTML = i;
+    }
+</script>
+<input type="button" value="Start" onclick="start()" />
+<input type="button" value="Pause" onclick="pause()" />
+<input type="button" value="Zero" onclick="zero()" />
+<hr>
+<div id='counter'>0</div>

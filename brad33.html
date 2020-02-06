@@ -1,0 +1,46 @@
+<script>
+    let timerTask1 = null;
+    let timerTask2 = null;
+    let timerTask3 = null;
+    let timerTask4 = null;
+
+    function test1(){
+        timerTask1 = setTimeout( function(){
+            document.getElementById('here1').innerHTML = 
+            Math.floor(Math.random()*49+1);
+        } , 1*1000);
+        timerTask2 = setTimeout( function(){
+            document.getElementById('here2').innerHTML = 
+            Math.floor(Math.random()*49+1);
+        } , 3*1000);
+        timerTask3 = setTimeout( function(){
+            document.getElementById('here3').innerHTML = 
+            Math.floor(Math.random()*49+1);
+        } , 5*1000);
+        timerTask4 = setTimeout( function(){
+            document.getElementById('here4').innerHTML = 
+            Math.floor(Math.random()*49+1);
+        } , 7*1000);
+
+    }
+    function test2(){
+        console.log("OK");
+        document.getElementById('here').innerHTML = 
+            Math.floor(Math.random()*49+1);
+        timerTask = null;
+    }
+    function test3(){
+        if (timerTask != null){
+            clearTimeout(timerTask);
+            document.getElementById('here').innerHTML = 
+                'not much';
+        }
+    }
+</script>
+<input type="button" value="Click1" onclick="test1()" /><br>
+<input type="button" value="Click2" onclick="test3()" />
+<hr>
+<div id='here1'></div>
+<div id='here2'></div>
+<div id='here3'></div>
+<div id='here4'></div>
