@@ -1,5 +1,11 @@
 <script src='bradutils.js'></script>
 <script>
-    let newid = createTWIdByBoth('A', false);
-    console.log(newid);
+    let newid1 = createTWIdByBoth('A', false);
+    console.log("area + gender : " + newid1);
+    let newid2 = createTWIdByGender(true);
+    console.log("gender: " + newid2);
+    let newid3 = createTWIdByArea('E');
+    console.log("area: " + newid3);
+    let newid4 = createTWId();
+    console.log("none: " + newid4);
 </script>
