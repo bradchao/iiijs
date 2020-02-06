@@ -1,8 +1,13 @@
 <script>
     let i = 0;  // second
     let timerTask = null;
+    let isRunning = false;
     function start(){
-        timerTask = setInterval( doCounter, 100);
+        if (isRunning) return;
+
+        document.getElementById("start").disabled = true;
+        isRunning = true;
+        timerTask = setInterval( doCounter, 1000);
     }
     function doCounter(){
         document.getElementById('counter').innerHTML = ++i;
@@ -11,13 +16,16 @@
         if (timerTask != null){
             clearInterval(timerTask);
         }
+        isRunning = false;
+        document.getElementById("start").disabled = false;
     }
     function zero(){
         i = 0;
         document.getElementById('counter').innerHTML = i;
     }
+
 </script>
-<input type="button" value="Start" onclick="start()" />
+<input type="button" value="Start" id='start' onclick="start()" />
 <input type="button" value="Pause" onclick="pause()" />
 <input type="button" value="Zero" onclick="zero()" />
 <hr>
