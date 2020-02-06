@@ -1,10 +1,11 @@
+console.log("before");
 function checkTWId(id){
     // 1. 長度 == 10
     // 2. 1 = A ~ Z
     // 3. 2 = 1 or 2
     // 4. 3-10 = 0~9
     // 5. 檢查碼
-
+    console.log("start checkId()");
     let ret = false;
     let letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
     if (id.match(/^[A-Z][12][0-9]{8}$/)){
@@ -26,6 +27,41 @@ function checkTWId(id){
         ret = sum % 10 == 0;
 
     }
+    console.log("end checkId()");
 
     return ret;
 }
+console.log("after");
+
+function createTWId(){
+
+}
+function createTWIdByArea(area){
+
+}
+function createTWIdByGender(gender){
+
+}
+// area = A ~ Z
+// gender = true(1) / false(2)
+function createTWIdByBoth(area = 'A', gender = false){
+    let id  = area;
+    id += gender?"1":"2";
+    for (let i=0; i<7; i++){
+        id += Math.floor(Math.random()*10);
+    }
+    for (let j=0; j<10; j++){
+        if (checkTWId(id + j)){
+            // OK
+            id += j;
+            break;
+        }
+    }
+
+    return id;
+}
+
+
+
+
+
