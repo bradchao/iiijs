@@ -10,7 +10,43 @@
     bike.upSpeed(); // 1
     bike.upSpeed(); // 1.2
     bike.upSpeed(); // 1.44
-    document.write(bike.speed);
+    document.write(bike.speed + "<hr>");
+
+    // scooter has-a
+    let scooter = {
+        speed: 0,
+        gear: 1,
+        upSpeed : function(){
+            this.speed = this.speed<1 ? 1 : this.speed*this.gear*1.2;
+        },
+        downSpeed : function(){
+            this.speed = this.speed<1 ? 0 : this.speed*0.7;
+        }
+    };
+    scooter.upSpeed();scooter.upSpeed();scooter.upSpeed();
+    scooter.downSpeed(); scooter.downSpeed();
+    scooter.upSpeed();scooter.upSpeed();
+    document.write(scooter.speed + "<hr>");
+
+    //bike.upSpeed();
+    document.write(bike.speed + "<br>");
+    bike['upSpeed']();
+    document.write(bike.speed + "<br>");
+    let method = 'upSpeed';
+    bike[method]();
+    document.write(bike.speed + "<hr>");
+
+    for (let name in bike){
+        document.write(name + " ==> " + bike[name] + "<br>");
+    }
+
+    document.write("<hr>");
+
+    // window
+    for (let name in document){
+        document.write(name + " ==> " + document[name] + "<br>");
+    }
+
 
 
 </script>
