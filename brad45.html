@@ -1,0 +1,32 @@
+<script>
+    function test1(){
+        // CSS 選擇器
+        let div1 = document.querySelector('#div1');
+        div1.innerHTML = "Hello, World";
+
+        let div2 = document.querySelectorAll(".div2");
+        for (let i in div2){
+            div2[i].innerHTML = "Hello, Brad";
+        }
+
+        let spans = document.getElementsByTagName('span');
+        for(let span of spans){
+            span.innerHTML = 'Brad';
+        }
+
+
+    }
+</script>
+<h1>Brad Big Company</h1>
+<hr>
+<input type="button" value="test1" onclick="test1()" />
+<input type="button" value="test2" onclick="test2()" />
+<hr>
+<div id="div1"></div>
+<hr>
+<div class="div2"></div>
+<hr>
+<div class="div2"></div>
+<hr>
+<span></span> : <span></span> : <span></span> : <span></span>
+
