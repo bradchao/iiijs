@@ -1,0 +1,34 @@
+<script>
+    // DOM 架構
+    let body = document.createElement('body');
+    document.body = body;
+
+    let header = document.createElement('h1');
+    //h1.innerHTML = 'Brad Big Company';
+    let h1text = document.createTextNode('Brad Big Company');
+    header.appendChild(h1text);
+
+    document.body.appendChild(header);
+
+    let hr = document.createElement('hr');
+    document.body.appendChild(hr);
+
+    let ul = document.createElement("ol");
+    document.body.appendChild(ul);
+
+    let ritem;
+    for (let i=1; i<=4; i++){
+        let item = document.createElement("li");
+        item.innerHTML = `第${i}項 ......`;
+        ul.appendChild(item);
+
+        if (i == 2){
+            ritem = item;
+        }
+    }
+
+    ul.removeChild(ritem);
+
+
+
+</script>
