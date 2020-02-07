@@ -1,0 +1,20 @@
+<script>
+    let biker = {
+        _speed : 0,
+        set speed(value){
+            console.log("here:"+value);
+            if (value >= 0){
+                this._speed = value;
+            }
+        },
+        get speed(){
+            return "speed is" + this._speed;
+        }
+    };
+    biker.speed = 1;
+    document.write(biker.speed+'<br>');
+    biker.speed = -1;
+    document.write(biker.speed+'<br>');
+    biker.speed = 100;
+    document.write(biker.speed+'<br>');
+</script>
