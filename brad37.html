@@ -1,0 +1,22 @@
+<script>
+    // key => value; Mapping
+    let person = [];
+    person['name'] = 'Brad';
+    person['age'] = 18;
+    document.write(person['name'] + ":" + person['age'] + '<br>');
+    person.push(123); person.push('III');
+    for (let key in person){
+        document.write(key + " => " + person[key] + '<br>');
+    }
+    document.write("<hr>");
+
+    person['eat'] = function(){
+        document.write(this.name + " eat something...");
+    };
+    person.eat();
+    person['fxy'] = function(x,y){
+        return 2*x+y;
+    };
+    
+
+</script>
