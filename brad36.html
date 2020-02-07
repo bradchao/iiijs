@@ -1,0 +1,22 @@
+<script>
+    let bike = {
+        _speed: 0,
+        set speed(value){
+            console.log("here:" + value);
+            if (value >= 0){
+                this._speed = value;
+            }
+        },
+        get speed(){
+            return "speed is " + this._speed;
+        }
+    };
+
+    bike.speed = 1;   // set speed
+    document.write(bike.speed + '<br>'); // get speed
+    bike.speed = -1;   // set speed
+    document.write(bike.speed + '<br>'); // get speed
+    bike.speed = 123;   // set speed
+    document.write(bike.speed + '<br>'); // get speed
+    
+</script>
