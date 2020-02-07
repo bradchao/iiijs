@@ -1,0 +1,33 @@
+<h1 id='header'></h1>
+<hr>
+<canvas id="canvas" width="480" height="320" 
+style="border: 1px solid black"></canvas>
+<script>
+    header.innerHTML = 'Brad Big Company';
+    let ctx = canvas.getContext('2d');
+
+    ctx.strokeStyle = 'rgb(0,0,255)';
+
+    let isDrag = false;
+
+    canvas.onmousedown = function(event){
+        isDrag = true;
+        ctx.beginPath();
+        ctx.moveTo(event.offsetX, event.offsetY);
+    };
+    canvas.onmouseup = function(event){
+        isDrag = false;
+    }
+    canvas.onmousemove = function(event){
+        if (!isDrag) return;
+        ctx.lineTo(event.offsetX, event.offsetY);
+        ctx.stroke();
+    }
+
+    //ctx.clearRect(x,y,w,h);
+
+
+
+
+
+</script>
