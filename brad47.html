@@ -1,5 +1,43 @@
 <canvas id="canvas" width="480" height="320"
     style="border: 1px solid black;"></canvas>
 <script>
+    let ctx = canvas.getContext('2d');
+    let bg = new Image();
+    bg.src = 'bg.jpg';
+    let ball1 = new Image();
+    let ball2 = new Image();
+    let ball3 = new Image();
+    ball1.src= "ball1.png";ball2.src= "ball2.png";ball3.src= "ball3.png";
+    let ballImg = [ball1, ball2, ball3];
+    let balls = []; // element is-a ballObj
+    let ballObj = function(){
+        this.x = 0;
+        this.y = 0;
+        this.dx = 8;
+        this.dy = 8;
+        this.img = 0;
+    };
+    bg.onload = function(){
+        ctx.drawImage(bg, 0, 0);
+    }
+
+    function refreshView(){
+        ctx.drawImage(bg, 0, 0);
+        for (let ball of balls){
+            ctx.drawImage(ballImg[ball.img], ball.x, ball.y);
+        }
+    }
+    setInterval(refreshView, 16);
+
+    canvas.onmousedown = function(e){
+        let ball = new ballObj();
+        ball.x = e.offsetX - 24;
+        ball.y = e.offsetY - 24;
+        ball.img = Math.floor(Math.random()*3);
+        balls.push(ball);
+    }
+
+
+
 
 </script>

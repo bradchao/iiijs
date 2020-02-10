@@ -1,0 +1,32 @@
+<script>
+    let a = {
+        x : 10,
+        y : 3
+    }
+    console.log(a.x + " x " + a.y);
+    let b = a;
+    console.log(a.x + " x " + a.y);
+    console.log(b.x + " x " + b.y);
+    b.x = 20;
+    console.log(a.x + " x " + a.y);
+    console.log(b.x + " x " + b.y);
+    console.log("------");
+    let c = function(){
+        this.x = 10;
+        this.y = 3;
+    }
+    let d = new c();
+    let f = new c();
+    console.log(d.x + " x " + d.y);
+    console.log(f.x + " x " + f.y);
+    d.x = 20;
+    console.log(d.x + " x " + d.y);
+    console.log(f.x + " x " + f.y);
+    console.log("------");
+
+
+
+
+
+
+</script>
