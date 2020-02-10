@@ -1,0 +1,37 @@
+<script>
+    let bike = {
+        brand: 'Gaint',
+        speed: 12,
+        chSpeed: function(value){
+            this.speed = value;
+        }
+    };
+
+    let person = {
+        name: 'Brad',
+        bikes: [ 
+            {brand:"A",speed:0},
+            {brand:"B",speed:10}
+        ]
+    }
+
+    let json1 = JSON.stringify(bike);
+    console.log(json1);
+    let json2 = JSON.stringify(person);
+    console.log(json2);
+
+    let b1 = JSON.parse(json1);
+    console.log(b1.brand + ":" + b1.speed);
+
+    let p1 = JSON.parse(json2);
+    console.log(p1.name + ":" + p1.bikes[0].brand);
+
+    let open = '[{"key":"v1"},{"key":"v2"},{"key":"v3"}]';
+    let o1 = JSON.parse(open);
+    console.log(o1[1].key);
+
+
+
+
+
+</script>

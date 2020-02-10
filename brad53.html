@@ -1,0 +1,13 @@
+<script src="bradutils.js"></script>
+<script>
+    let now = new Date();
+    console.log(typeof now);
+    console.log(now);
+
+    //let year1 = now.getYear(); 1900+
+    let year = now.getTWYear();
+    let month = now.getMonth()+1;
+    let day = now.getCWeek();
+    console.log(year + "-" + month + '-' + day);
+
+</script>
