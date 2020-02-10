@@ -1,0 +1,58 @@
+<script>
+    let Ball = function(){
+        this.x = 0;
+        this.y = 0;
+        this.move = function(){
+            console.log("ball moving...");
+        };
+    }
+
+    let b1 = new Ball();    // b1 物件實體, b1 is-a Ball
+    b1.x = 10; b1.y = 3;
+    console.log(b1);
+    console.log(b1 instanceof Ball);
+    console.log(b1 instanceof Array);
+
+    let b2 = new Ball();    // b2 物件實體, b2 is-a Ball
+    b2.x = 20; b2.y = 30;
+    console.log(b2);
+    console.log(b1);
+
+    let a1 = new Array();
+    a1[0] = 10; a1[1]= 3;
+    console.log(a1);
+    console.log(a1 instanceof Ball);
+    console.log(a1 instanceof Array);
+    console.log("-----");
+
+    // view b1 has-a ?
+    for (let key in b1){
+        console.log(key + " => " + b1[key]);
+    }
+
+    function cloneBall(obj){
+        let newball = new Ball();
+        for (let key in obj){
+            newball[key] = obj[key];
+        }
+        return newball;
+    }
+
+    let b3 = cloneBall(b1);
+    console.log(b3.x + ":" + b3.y);
+    let b4 = cloneBall(b2);
+    console.log(b4.x + ":" + b4.y);
+    b3.x = 100; b3.y = 300;
+    b4.x = 1000; b4.y = 3000;
+    console.log("-----");
+    console.log(b1.x + ":" + b1.y);
+    console.log(b2.x + ":" + b2.y);
+    console.log(b3.x + ":" + b3.y);
+    console.log(b4.x + ":" + b4.y);
+    b1.move();
+    b2.move();
+    b3.move();
+    b4.move();
+
+
+</script>
