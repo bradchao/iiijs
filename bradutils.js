@@ -63,6 +63,20 @@ function createTWIdByBoth(area = 'A', gender = false){
 }
 
 
+function clone(source){
+    if (source === null || typeof (source) !== 'object') return source;
+
+    let target = new Object();
+    for (let prop in source){
+        if (typeof(source[prop]) === 'object'){
+            target[prop] = clone(source[prop]);
+        }else{
+            target[prop] = source[prop];
+        }
+    }
+
+    return target;
+}
 
 
 
