@@ -19,14 +19,26 @@
     </style>
   </head>
   <body>
+    <div>
+        <input type="text" id="where" />
+        <input type="button" value="Go" onclick="goWhere()" />
+    </div>
     <div id="map"></div>
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat: 21.945317, lng: 120.797959},
+          zoom: 14
         });
+      }
+      function goWhere(){
+          let whereValue = where.value;
+          let newlatlng = whereValue.split(',');
+          let newlat = Number(newlatlng[0].trim());
+          let newlng = Number(newlatlng[1].trim());
+          let latlng = {lat: newlat, lng: newlng};
+          map.setCenter(latlng);
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxgq5w8TzOCoWLroAIf2nEn_QdWVfmWjM&callback=initMap"
