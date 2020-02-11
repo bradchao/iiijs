@@ -1,0 +1,59 @@
+<script>
+    class Bike {
+        // 建構式/建構子/建構方法
+        constructor(speed){
+            document.write("Bike()<br>");
+            this.speed = speed;
+            this.name = '';
+        }
+        upSpeed(){
+            document.write("Bike:upSpeed()<br>");
+        }
+        static m1(){
+            document.write("Bike:m1()");
+        }
+    }
+
+    class Scooter extends Bike {
+        constructor(speed, name, gear){
+            document.write("Scooter()<br>");
+            super(speed);
+            this.speed = speed;
+            this.name = name;
+            this.gear = gear;
+        }
+        chGear(){
+            document.write("chGear()<br>");
+        }
+        upSpeed(){
+            super.upSpeed();
+            document.write("Scooter:upSpeed()<br>");
+        }
+    }
+
+    class Brad extends Object {
+        constructor(...x){
+            document.write("Brad()<br>");
+            super();
+        }
+    }
+    Brad.prototype.toString = function(){
+        return "Hello, Brad";
+    }
+
+    let b1 = new Bike(12);
+    b1.upSpeed();
+    document.write(b1.speed + "<hr>");
+
+    let s1 = new Scooter(34);
+    s1.upSpeed();
+    s1.chGear();
+    document.write(b1.speed + "<hr>");
+
+    let brad = new Brad();
+    document.write(brad + "<hr>");
+
+    //Math.random();
+    Bike.m1();
+
+</script>
