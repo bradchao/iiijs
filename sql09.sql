@@ -21,5 +21,14 @@ case when score >= 90 then 'A'
 end 'level' 
 from students order by score desc;
 
+select * from students group by csex;
+select csex, count(*) from students group by csex;
+select count(*) from students;
+select csex, count(*), sum(score), avg(score), min(score), max(score) 
+from students group by csex having avg(score) >= 70 ;
+select score from students where csex = 'F';
+
+
+
 
 
