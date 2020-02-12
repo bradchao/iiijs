@@ -12,4 +12,14 @@ SET SQL_SAFE_UPDATES = 1;
 update students set score = floor(rand()*51+50);
 select * from students;
 select cname, score, if(score>=60,'Pass','Down') status from students order by score desc;
+select cname, score,
+case when score >= 90 then 'A'
+	when score >= 80 then 'B'
+    when score >= 70 then 'C'
+    when score >= 60 then 'D'
+    else 'E'
+end 'level' 
+from students order by score desc;
+
+
 
