@@ -13,4 +13,9 @@ case
 end 'title'
 from students;
 select csex, if(csex='F', '小姐', '先生') from students;
-select concat(cname, ' ', if(csex='F', '小姐', '先生')) title, caddr from students;
+select concat(cname, ' ', if(csex='F', '小姐', '先生'), ' 收') title, caddr from students;
+select floor(rand()*101);
+select * from students;
+alter table students add score int;
+desc students;
+update students set cname='ok' where cid < 100;
