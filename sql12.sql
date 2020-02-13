@@ -90,3 +90,48 @@ where supplierId in (
         where categoryName = 'Seafood'
     )
 );
+
+-- Join
+select employees.employeeId, employees.LastName, 
+		orders.orderId, orders.orderDate  
+from employees
+	join orders 
+    on (employees.employeeId = orders.employeeId);
+
+select e.employeeId, e.LastName, 
+		o.orderId, o.orderDate  
+from employees e
+	join orders o
+    on (e.employeeId = o.employeeId);
+    
+/*
+select table1.col, table2.col, table3.col 
+from table1
+	join table2 on (table1.col1 = table2.col2)
+    join table3 on (table2.col2 = table3.col3)
+where ....
+
+以下不合理喔
+select table1.col, table2.col, table3.col 
+from table1
+    join table3 on (table2.col2 = table3.col3)
+	join table2 on (table1.col1 = table2.col2)
+where ....
+*/
+select o.orderId, o.orderDate, e.lastName, c.companyName
+from orders o
+	join employees e on (e.employeeId=o.employeeId)
+    join customers c on (c.customerId=o.customerId)
+where o.shippedDate > o.requiredDate and 
+o.orderDate > '1998-01-01'
+order by c.companyName;
+    
+-- 列出客戶公司名稱, 其訂單數量超過15+
+select c.companyName, count(o.orderId) numOfOrder
+from customers c
+	join orders o on ()
+group by c.companyName    
+having numOfOrder >= 15
+order by numOfOrder desc;
+
+
