@@ -69,3 +69,24 @@ where supplierid in (
     where companyname in 
     ('Tokyo Traders', 'Pavlova, Ltd.', 'Heli Suswaren GmbH & Co. KG')
 );
+
+show tables;
+select * from categories;
+
+select productid, productname from products
+where categoryid = (
+	select categoryid from categories
+    where CategoryName = 'Seafood'
+);
+
+select supplierid from products
+where categoryid = 8;
+
+select companyName from suppliers
+where supplierId in (
+	select supplierid from products
+	where categoryid in (
+		select categoryId from categories
+        where categoryName = 'Seafood'
+    )
+);
