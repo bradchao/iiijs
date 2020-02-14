@@ -48,3 +48,45 @@ from `order details`
 where productid = 2
 order by unitprice desc;
 
+select min(unitprice)
+from `order details` od
+where od .productId = 2;
+
+select distinct od.productId, od.unitPrice
+from `order details` od
+where od.unitPrice = (
+	select min(unitprice)
+	from `order details` od2
+	where od2.productId = od.productId
+)
+order by od.productId;
+
+-- 業務銷售排行
+select e.employeeId, o.orderId,
+sum(od.unitPrice*od.quantity*(1-od.discount)) total
+from orders o
+	join `order details` od using(orderId)
+    join employees e using(employeeId)
+group by o.EmployeeID
+order by total desc;
+
+show variables;
+show variables like 'sql%';
+show variables like 'sql_mode';
+show variables like '%safe%';
+set sql_mode = '';
+
+select e.employeeId, e.lastname, 
+sum(od.unitPrice*od.quantity*(1-od.discount)) total
+from employees e
+join orders o on (e.employeeId = o.employeeId)
+join `order details` od on (o.orderId = od.orderId)
+group by o.employeeId
+order by total desc;
+-- 驗算
+select sum(unitprice*quantity*(1-discount))
+from `order details`
+where orderid in (
+	select orderid from orders
+    where employeeId = 6
+)
