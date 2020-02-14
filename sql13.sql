@@ -24,3 +24,27 @@ select o.orderid, e.firstname, c.companyName
 from orders o, employees e, customers c
 where (o.customerId = c.customerId) and (o.employeeId = e.employeeId) 
 order by o.orderId;
+
+-- 客戶公司名稱單品項銷售金額超過 10,000+
+select c.companyName, o.orderId, 
+od.unitPrice*od.quantity*(1-od.discount) totalPrice
+from `order details` od
+	join orders o on (o.orderId = od.orderId)
+    join customers c on(o.customerId = c.customerId)
+where od.unitPrice*od.quantity*(1-od.discount) > 10000
+order by totalPrice desc;
+
+select city, country from customers;
+select city, country from employees;
+
+select employeeId, lastname, city, country
+from employees
+where row(city, country) in 
+(select city, country from customers);
+
+select * from products;
+select productid, unitprice
+from `order details`
+where productid = 2
+order by unitprice desc;
+
