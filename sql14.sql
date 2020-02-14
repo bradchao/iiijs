@@ -16,3 +16,16 @@ where tb1.id = tb2.tb1id;
 drop table tb1;
 drop table tb2;
 show tables;
+
+insert into tb1 values (4,'D');
+
+select tb1.id id1, tb1.f1, tb2.id id2, tb2.f2, tb2.tb1id
+from tb1 join tb2 on (tb1.id = tb2.tb1id);
+    
+select tb1.id id1, tb1.f1, tb2.id id2, tb2.f2, tb2.tb1id
+from tb1 left join tb2 on (tb1.id = tb2.tb1id);
+
+select tb1.id id1, tb1.f1, tb2.id id2, tb2.f2, tb2.tb1id
+from tb1 right join tb2 on (tb1.id = tb2.tb1id);
+
+insert into tb2 values (44, 'DDD', 7);
