@@ -28,3 +28,12 @@ select * from myview1;
 select * from myview2;
 
 desc students;
+alter table students add primary key(cid);
+alter table students add unique(cemail);
+alter table students add index index1(csex);
+
+create index index2 on students(cbirthday);
+show indexes from students;
+drop index index2 on students;
+
+
